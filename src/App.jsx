@@ -5,12 +5,12 @@ import Login from './Pages/Login';
 const App = () => {
   return (
     <Router>
-    <Routes>  
-    <Route path="/" element={<Login />} />
-    <Route path="*" element={<NotFound />} />
+      <Routes>  
+        <Route path="/" element={<Login />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
-  )
+  );
 }
 
-export default App   
+export default App;
