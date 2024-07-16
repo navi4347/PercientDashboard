@@ -1,8 +1,11 @@
-
+import HeaderTop from "../Components/HeaderTop"
+import LoginFom from "../Components/LoginFom"
 function Login() {
   return (
     <div>
-      Login
+      <HeaderTop />
+      <LoginFom />
+
     </div>
   )
 }
