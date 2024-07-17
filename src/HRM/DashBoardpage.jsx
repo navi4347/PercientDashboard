@@ -1,6 +1,7 @@
 function DashBoardpage() {
   return (
-    <div>DashBoardpage</div>
+    <div className="bgg">
+      DashBoardpage</div>
   )
 }
 

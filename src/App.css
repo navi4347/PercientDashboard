@@ -13,19 +13,33 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   
-  .logo {
-    height: 52px;
+  @media (max-width: 600px) {
+  .header-top {
+    flex-direction: column;
+    align-items: flex-start;
   }
+ 
+}
   
   .css-jzk4qw-MuiPaper-root-MuiAppBar-root,
   .css-12i7wg6-MuiPaper-root-MuiDrawer-paper,
   .css-ciy9n4-MuiPaper-root-MuiAppBar-root,
   .css-4t3x6l-MuiPaper-root-MuiDrawer-paper  
   {
-    background-color: #9f47d1 !important; 
-    color: #fff !important; 
+    background-color: #fff !important; 
+    color: #9f47d1 !important; 
   }
   .css-cveggr-MuiListItemIcon-root,
   .css-78trlr-MuiButtonBase-root-MuiIconButton-root{
-    color: #fff !important; 
+    color: #9f47d1 !important; 
+  }
+  .bgg{
+    height: 100dvh;
+    width: 100%;
+  }
+  .css-1r7kz78-MuiModal-root-MuiDrawer-root .MuiDrawer-paper{
+    width: 100% !important;
+  }
+  .css-10hburv-MuiTypography-root {
+    font-size: 1.2rem !important;
   }

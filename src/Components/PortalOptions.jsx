@@ -27,24 +27,24 @@ function PortalOptions() {
         <Card style={cardStyle} onClick={() => navigate('/Hrm')}>
           <CardContent>
             <Box display="flex" alignItems="center" justifyContent="center" height="100%" flexDirection="column">
-              <People fontSize="large" />
-              <Typography variant="h6">HRM</Typography>
+              <People fontSize="large" sx={{ color: '#9f47d1' }}/>
+              <Typography variant="h6" sx={{ color: '#9f47d1' }}>HRM</Typography>
             </Box>
           </CardContent>
         </Card>
         <Card style={cardStyle}>
           <CardContent>
             <Box display="flex" alignItems="center" justifyContent="center" height="100%" flexDirection="column">
-              <MonetizationOn fontSize="large" />
-              <Typography variant="h6">Payroll</Typography>
+              <MonetizationOn fontSize="large" sx={{ color: '#9f47d1' }}/>
+              <Typography variant="h6" sx={{ color: '#9f47d1' }}>Payroll</Typography>
             </Box>
           </CardContent>
         </Card>
         <Card style={cardStyle}>
           <CardContent>
             <Box display="flex" alignItems="center" justifyContent="center" height="100%" flexDirection="column">
-              <Policy fontSize="large" />
-              <Typography variant="h6">Policies</Typography>
+            <Policy fontSize="large" sx={{ color: '#9f47d1' }} />
+            <Typography variant="h6" sx={{ color: '#9f47d1' }}>Policies</Typography>
             </Box>
           </CardContent>
         </Card>
