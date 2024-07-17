@@ -8,7 +8,7 @@ function HeaderTop() {
       <img src={logo} alt="Logo" className="logo" />
       <Box display="flex" alignItems="center">
       <Typography variant="h6">We</Typography>
-      <Favorite style={{ color: 'purple', margin: '0 8px' }} />
+      <Favorite style={{ color: '#9f47d1', margin: '0 8px' }} />
       <Typography variant="h6">Percient Technologies Private Limited</Typography>
     </Box>
     </div>

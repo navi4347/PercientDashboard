@@ -17,3 +17,15 @@
     height: 52px;
   }
   
+  .css-jzk4qw-MuiPaper-root-MuiAppBar-root,
+  .css-12i7wg6-MuiPaper-root-MuiDrawer-paper,
+  .css-ciy9n4-MuiPaper-root-MuiAppBar-root,
+  .css-4t3x6l-MuiPaper-root-MuiDrawer-paper  
+  {
+    background-color: #9f47d1 !important; 
+    color: #fff !important; 
+  }
+  .css-cveggr-MuiListItemIcon-root,
+  .css-78trlr-MuiButtonBase-root-MuiIconButton-root{
+    color: #fff !important; 
+  }
