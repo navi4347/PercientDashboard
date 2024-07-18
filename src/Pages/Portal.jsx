@@ -7,12 +7,12 @@ const Portal = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const token = sessionStorage.getItem('token');
+    // const token = sessionStorage.getItem('token');
 
-    if (!token) {
-    navigate('/');
-    return;
-    }
+    // if (!token) {
+    // navigate('/');
+    // return;
+    // }
   }, [navigate]);
 
   return (

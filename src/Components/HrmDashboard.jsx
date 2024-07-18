@@ -16,7 +16,6 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import logo from '../assets/logo.png';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import AccountTreeIcon from '@mui/icons-material/AccountTree';
 import GroupsIcon from '@mui/icons-material/Groups';
@@ -24,12 +23,13 @@ import SavedSearchIcon from '@mui/icons-material/SavedSearch';
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
 import ChatIcon from '@mui/icons-material/Chat';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import logo from '../assets/logo.png';
 import DashBoardpage from '../HRM/DashBoardpage';
 import EmpInfo from '../HRM/EmpInfo';
 import TimeSheet from '../HRM/TimeSheet';
 import Recruitment from '../HRM/Recruitment';
 import Claim from '../HRM/Claim';
-import Newsfeed from '../HRM/Newsfeed'
+import Newsfeed from '../HRM/Newsfeed';
 import Documents from '../HRM/Documents';
 const drawerWidth = 240;
 
@@ -42,7 +42,6 @@ const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
       duration: theme.transitions.duration.leavingScreen,
     }),
     marginLeft: `-${drawerWidth}px`,
-    backgroundColor: '#f0f0f0',
     ...(open && {
       transition: theme.transitions.create('margin', {
         easing: theme.transitions.easing.easeOut,
@@ -79,13 +78,14 @@ const DrawerHeader = styled('div')(({ theme }) => ({
   justifyContent: 'flex-end',
 }));
 
-export default function ResponsiveDrawer() {
+export default function PersistentDrawerLeft() {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
   const [selectedContent, setSelectedContent] = React.useState('Dashboard');
 
   const handleListItemClick = (text) => {
     setSelectedContent(text);
+    handleDrawerClose();
   };
 
   const handleDrawerOpen = () => {
@@ -107,57 +107,15 @@ export default function ResponsiveDrawer() {
       case 'Timesheet':
         return <TimeSheet />;
       case 'Recruitment':
-        return <Recruitment/>;
+        return <Recruitment />;
       case 'Claim':
         return <Claim />;
       case 'Newsfeed':
         return <Newsfeed />;
+      default:
+        return null;
     }
   };
-
-  const drawer = (
-    <div>
-      <DrawerHeader>
-      <div style={{ flexGrow: 1, textAlign: 'left' }}>
-        <img src={logo} alt="Logo" className="logo"  style={{ maxWidth: '100%' }} />
-      </div>
-              <IconButton onClick={handleDrawerClose}>
-          {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
-        </IconButton>
-      </DrawerHeader>
-      <Divider />
-      <List>
-        {['Dashboard', 'EmpInfo', 'Timesheet', 'Documents'].map((text) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton onClick={() => handleListItemClick(text)}>
-              <ListItemIcon>
-                {text === 'Dashboard' ? <DashboardIcon /> :
-                  text === 'Documents' ? <AccountTreeIcon /> :
-                    text === 'EmpInfo' ? <GroupsIcon /> :
-                      text === 'Timesheet' ? <CalendarMonthIcon /> : null}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {['Recruitment', 'Claim', 'Newsfeed'].map((text) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton onClick={() => handleListItemClick(text)}>
-              <ListItemIcon>
-                {text === 'Recruitment' ? <SavedSearchIcon /> :
-                  text === 'Claim' ? <AccountBalanceWalletIcon /> :
-                    text === 'Newsfeed' ? <ChatIcon /> : null}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-    </div>
-  );
 
   return (
     <Box sx={{ display: 'flex' }}>
@@ -174,40 +132,64 @@ export default function ResponsiveDrawer() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            Responsive drawer
+            Persistent drawer
           </Typography>
         </Toolbar>
       </AppBar>
-      <Box
-        component="nav"
-        sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
-        aria-label="mailbox folders"
+      <Drawer
+        sx={{
+          width: drawerWidth,
+          flexShrink: 0,
+          '& .MuiDrawer-paper': {
+            width: drawerWidth,
+            boxSizing: 'border-box',
+          },
+        }}
+        variant="persistent"
+        anchor="left"
+        open={open}
       >
-        <Drawer
-          variant="temporary"
-          open={open}
-          onClose={handleDrawerClose}
-          ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
-          }}
-          sx={{
-            display: { xs: 'block', sm: 'none' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-          }}
-        >
-          {drawer}
-        </Drawer>
-        <Drawer
-          variant="persistent"
-          sx={{
-            display: { xs: 'none', sm: 'block' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-          }}
-          open={open}
-        >
-          {drawer}
-        </Drawer>
-      </Box>
+        <DrawerHeader>
+        <div style={{ flexGrow: 1, textAlign: 'left' }}>
+          <img src={logo} alt="Logo" className="logo" style={{ maxWidth: '100%' }} />
+        </div>
+          <IconButton onClick={handleDrawerClose}>
+            {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+          </IconButton>
+        </DrawerHeader>
+        <Divider />
+        <List>
+        {['Dashboard', 'EmpInfo', 'Timesheet', 'Documents'].map((text) => (
+            <ListItem key={text} disablePadding>
+            <ListItemButton onClick={() => handleListItemClick(text)}>
+            <ListItemIcon>
+                {text === 'Dashboard' ? <DashboardIcon /> :
+                  text === 'Documents' ? <AccountTreeIcon /> :
+                    text === 'EmpInfo' ? <GroupsIcon /> :
+                      text === 'Timesheet' ? <CalendarMonthIcon /> : null}
+                </ListItemIcon>
+                <ListItemText primary={text} />
+              </ListItemButton>
+            </ListItem>
+          ))}
+        </List>
+        <Divider />
+        <List>
+        {['Recruitment', 'Claim', 'Newsfeed'].map((text) => (
+            <ListItem key={text} disablePadding>
+                <ListItemButton onClick={() => handleListItemClick(text)}>
+                <ListItemIcon>
+                {text === 'Recruitment' ? <SavedSearchIcon /> :
+                  text === 'Claim' ? <AccountBalanceWalletIcon /> :
+                    text === 'Newsfeed' ? <ChatIcon /> : null}
+                </ListItemIcon>
+                <ListItemText primary={text} />
+              </ListItemButton>
+            </ListItem>
+          ))}
+        </List>
+        
+      </Drawer>
       <Main open={open}>
         <DrawerHeader />
         {renderContent()}
