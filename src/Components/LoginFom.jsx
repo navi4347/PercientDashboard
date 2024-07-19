@@ -4,7 +4,7 @@ import {
   Button,
   TextField,
 } from '@mui/material';
-
+import Box from '@mui/material/Box';
 import './Style.css';
 
 function LoginForm() {
@@ -43,8 +43,16 @@ function LoginForm() {
   };
 
   return (
+    <>
+    <Box
+      sx={{
+        width: 500,
+        maxWidth: '100%',
+      }}
+    >
     <div className='Center'>
       <div className="loginform">
+      <h4>Sign in to your account</h4>
         <form onSubmit={handleLogin}>
           <div>
             <TextField
@@ -83,6 +91,9 @@ function LoginForm() {
         {error && <p className='error-message'>{error}</p>}
       </div>
     </div>
+    </Box>
+    </>
+
   );
 }
 
