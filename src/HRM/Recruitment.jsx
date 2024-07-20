@@ -1,9 +1,5 @@
-
 function Recruitment() {
-  return (
-    <div className="bgg">
-        Recruitment</div>
-  )
+  return <div className="bgg">Recruitment</div>;
 }
 
-export default Recruitment
+export default Recruitment;

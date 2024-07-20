@@ -1,8 +1,5 @@
-
 function EmpInfo() {
-  return (
-    <div>EmpInfo</div>
-  )
+  return <div>EmpInfo</div>;
 }
 
-export default EmpInfo
+export default EmpInfo;

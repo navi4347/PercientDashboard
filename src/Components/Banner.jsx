@@ -1,11 +1,11 @@
-import ban from '../assets/ban.jpg';
+import ban from "../assets/download.svg";
 
 function Banner() {
   return (
-    <div className='Center'>
-              <img src={ban} alt="ban"  width={800}/>
+    <div className="Center">
+      <img src={ban} alt="ban" width={800} />
     </div>
-  )
+  );
 }
 
-export default Banner
+export default Banner;

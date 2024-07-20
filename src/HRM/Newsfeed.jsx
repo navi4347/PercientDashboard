@@ -1,9 +1,5 @@
-
 function Newsfeed() {
-  return (
-    <div className="bgg">
-        Newsfeed</div>
-  )
+  return <div className="bgg">Newsfeed</div>;
 }
 
-export default Newsfeed
+export default Newsfeed;

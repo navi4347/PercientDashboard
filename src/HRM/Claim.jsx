@@ -1,9 +1,5 @@
-
 function Claim() {
-  return (
-    <div className="bgg">
-        Claim</div>
-  )
+  return <div className="bgg">Claim</div>;
 }
 
-export default Claim
+export default Claim;

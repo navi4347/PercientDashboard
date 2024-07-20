@@ -50,3 +50,32 @@
     text-align: justify;
 
   }  
+
+
+
+.Auth{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.Auth .aleft {
+  flex: 1;
+  background-image: url('../assets/cargoly.png'); 
+  background-size: cover;
+  background-position: center;
+}
+
+@media (max-width: 959px) {
+  .Auth .aleft, .dleft{
+      display: none; 
+  }
+ 
+}
+
+.Auth .aright {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

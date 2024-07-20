@@ -1,9 +1,5 @@
-
 function Documents() {
-  return (
-    <div className="bgg">
-        Documents</div>
-  )
+  return <div className="bgg">Documents</div>;
 }
 
-export default Documents
+export default Documents;

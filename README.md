@@ -20,6 +20,7 @@ A web application dashboard built with Vite, React, Material-UI, and Bootstrap.
     npm install react-bootstrap bootstrap
     npm install react-router-dom
     npm install axios
+    npm install @fontsource/roboto
     ```
 
 3. Start the development server:
@@ -76,3 +77,5 @@ Follow the project setup instructions to get the project up and running on your 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+
+

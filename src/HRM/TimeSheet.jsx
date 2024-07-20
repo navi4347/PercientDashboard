@@ -1,8 +1,5 @@
-
 function TimeSheet() {
-  return (
-    <div  className="bgg">TimeSheet</div>
-  )
+  return <div className="bgg">TimeSheet</div>;
 }
 
-export default TimeSheet
+export default TimeSheet;

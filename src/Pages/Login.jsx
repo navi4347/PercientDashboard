@@ -1,24 +1,21 @@
-import LoginFom from "../Components/LoginFom"
-import Banner from "../Components/Banner"
-import HeaderTop from '../Components/HeaderTop'
+import LoginFom from "../Components/LoginFom";
+import Banner from "../Components/Banner";
+import HeaderTop from "../Components/HeaderTop";
 
 function Login() {
   return (
     <div>
-      <HeaderTop /> 
-    <div className="container">
-  <div className="row">
-  <div className="col-8 d-none d-lg-block">
-  <Banner/>
-          </div>
-          <div className="col-12 col-lg-4">
-    <LoginFom/>
+      <HeaderTop />
+      <div className="Center Auth">
+        <div className="aleft">
+          <Banner />
+        </div>
+        <div className="container aright">
+          <LoginFom />
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-
-    </div>
-  )
+  );
 }
 
-export default Login
+export default Login;
