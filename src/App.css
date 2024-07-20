@@ -1,59 +1,55 @@
 .header-top {
-    background-color: #ffffff;
-    margin-top: 0;
-    position: fixed;
-    top: 0;  
-    left: 0;
-    width: 100%;
-    z-index: 11;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  @media (max-width: 600px) {
-  .header-top {
-    flex-direction: column;
-    align-items: flex-start;
-  }
- 
+  background-color: #ffffff;
+  margin-top: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 11;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-  
-  .css-jzk4qw-MuiPaper-root-MuiAppBar-root,
-  .css-12i7wg6-MuiPaper-root-MuiDrawer-paper,
-  .css-ciy9n4-MuiPaper-root-MuiAppBar-root,
-  .css-4t3x6l-MuiPaper-root-MuiDrawer-paper  
-  {
-    background-color: #fff !important; 
-    color: #9f47d1 !important; 
+
+@media (max-width: 600px) {
+  .header-top {
+      flex-direction: column;
+      align-items: flex-start;
   }
-  .css-cveggr-MuiListItemIcon-root,
-  .css-78trlr-MuiButtonBase-root-MuiIconButton-root{
-    color: #9f47d1 !important; 
-  }
-  
-  .css-1f2xuhi-MuiDrawer-docked .MuiDrawer-paper{
-    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 
-    0px 4px 5px 0px rgba(0, 0, 0, 0.14),
-    0px 1px 10px 0px rgba(0, 0, 0, 0.12) !important;
-    border-top-right-radius: 12px;  
-    border-bottom-right-radius: 12px; 
-    }
-  
-  
-  .css-10hburv-MuiTypography-root {
-    font-size: 1.2rem !important;
-  }
-  p{
-    text-align: justify;
+}
 
-  }  
+.css-jzk4qw-MuiPaper-root-MuiAppBar-root,
+.css-12i7wg6-MuiPaper-root-MuiDrawer-paper,
+.css-ciy9n4-MuiPaper-root-MuiAppBar-root,
+.css-4t3x6l-MuiPaper-root-MuiDrawer-paper {
+  background-color: #fff !important;
+  color: #9f47d1 !important;
+}
 
+.css-cveggr-MuiListItemIcon-root,
+.css-78trlr-MuiButtonBase-root-MuiIconButton-root {
+  color: #9f47d1 !important;
+}
 
+.css-1f2xuhi-MuiDrawer-docked .MuiDrawer-paper {
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+              0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+              0px 1px 10px 0px rgba(0, 0, 0, 0.12) !important;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
 
-.Auth{
+.css-10hburv-MuiTypography-root {
+  font-size: 1.2rem !important;
+}
+
+p {
+  text-align: justify;
+}
+
+.Auth {
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -61,16 +57,15 @@
 
 .Auth .aleft {
   flex: 1;
-  background-image: url('../assets/cargoly.png'); 
+  background-image: url('../assets/cargoly.png');
   background-size: cover;
   background-position: center;
 }
 
 @media (max-width: 959px) {
-  .Auth .aleft, .dleft{
-      display: none; 
+  .Auth .aleft, .dleft {
+      display: none;
   }
- 
 }
 
 .Auth .aright {
