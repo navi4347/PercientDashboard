@@ -1,9 +1,14 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Button, TextField } from "@mui/material";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
+import {
+  Button,
+  TextField,
+  InputAdornment,
+  Box,
+  Typography,
+} from "@mui/material";
 import "./Style.css";
+import Footer from "./Footer";
 
 function LoginForm() {
   const [username, setUsername] = useState("");
@@ -16,13 +21,14 @@ function LoginForm() {
   const handleLogin = async (e) => {
     e.preventDefault();
     setError("");
+    const completeUsername = `${username}@percient.com`;
     try {
       const loginResponse = await fetch("http://127.0.0.1:5000/api/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ username, password }),
+        body: JSON.stringify({ username: completeUsername, password }),
       });
       if (loginResponse.ok) {
         const loginData = await loginResponse.json();
@@ -38,6 +44,11 @@ function LoginForm() {
       setUsername("");
       setPassword("");
     }
+  };
+
+  const handleUsernameChange = (e) => {
+    const inputValue = e.target.value;
+    setUsername(inputValue);
   };
 
   return (
@@ -64,8 +75,15 @@ function LoginForm() {
                   className="kgf"
                   value={username}
                   autoComplete="off"
-                  onChange={(e) => setUsername(e.target.value)}
+                  onChange={handleUsernameChange}
                   required
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <span style={{ color: "#9f47d1" }}>@percient.com</span>
+                      </InputAdornment>
+                    ),
+                  }}
                 />
               </div>
               <div>
@@ -94,6 +112,7 @@ function LoginForm() {
             <br />
             {token && <p>Token: {token}</p>}
             {error && <p className="error-message">{error}</p>}
+            <Footer />
           </div>
         </div>
       </Box>

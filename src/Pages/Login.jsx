@@ -1,7 +1,6 @@
 import LoginFom from "../Components/LoginFom";
 import Banner from "../Components/Banner";
 import HeaderTop from "../Components/HeaderTop";
-
 function Login() {
   return (
     <div>

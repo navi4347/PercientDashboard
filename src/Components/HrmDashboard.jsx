@@ -1,5 +1,6 @@
 import * as React from "react";
 import { styled, useTheme } from "@mui/material/styles";
+import { useNavigate } from "react-router-dom";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -22,6 +23,7 @@ import GroupsIcon from "@mui/icons-material/Groups";
 import SavedSearchIcon from "@mui/icons-material/SavedSearch";
 import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
 import ChatIcon from "@mui/icons-material/Chat";
+import LogoutIcon from "@mui/icons-material/Logout";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import logo from "../assets/logo.png";
 import DashBoardpage from "../HRM/DashBoardpage";
@@ -31,6 +33,7 @@ import Recruitment from "../HRM/Recruitment";
 import Claim from "../HRM/Claim";
 import Newsfeed from "../HRM/Newsfeed";
 import Documents from "../HRM/Documents";
+
 const drawerWidth = 240;
 
 const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })(
@@ -73,15 +76,19 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   display: "flex",
   alignItems: "center",
   padding: theme.spacing(0, 1),
-  // necessary for content to be below app bar
   ...theme.mixins.toolbar,
   justifyContent: "flex-end",
 }));
+
+const LogoutContainer = styled("div")({
+  marginTop: "auto",
+});
 
 export default function PersistentDrawerLeft() {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
   const [selectedContent, setSelectedContent] = React.useState("Dashboard");
+  const navigate = useNavigate();
 
   const handleListItemClick = (text) => {
     setSelectedContent(text);
@@ -117,6 +124,10 @@ export default function PersistentDrawerLeft() {
     }
   };
 
+  const handleLogout = () => {
+    navigate("/login");
+  };
+
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
@@ -143,6 +154,8 @@ export default function PersistentDrawerLeft() {
           "& .MuiDrawer-paper": {
             width: drawerWidth,
             boxSizing: "border-box",
+            display: "flex",
+            flexDirection: "column",
           },
         }}
         variant="persistent"
@@ -206,6 +219,19 @@ export default function PersistentDrawerLeft() {
             </ListItem>
           ))}
         </List>
+        <Divider />
+        <LogoutContainer>
+          <List>
+            <ListItem disablePadding>
+              <ListItemButton onClick={handleLogout}>
+                <ListItemIcon>
+                  <LogoutIcon />
+                </ListItemIcon>
+                <ListItemText primary="Logout" />
+              </ListItemButton>
+            </ListItem>
+          </List>
+        </LogoutContainer>
       </Drawer>
       <Main open={open}>
         <DrawerHeader />
