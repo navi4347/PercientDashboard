@@ -19,11 +19,11 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import AccountTreeIcon from "@mui/icons-material/AccountTree";
+import EditNoteIcon from "@mui/icons-material/EditNote";
 import GroupsIcon from "@mui/icons-material/Groups";
 import SavedSearchIcon from "@mui/icons-material/SavedSearch";
-import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
-import ChatIcon from "@mui/icons-material/Chat";
 import LogoutIcon from "@mui/icons-material/Logout";
+import ConnectWithoutContactIcon from "@mui/icons-material/ConnectWithoutContact";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import logo from "../assets/logo.png";
 import DashBoardpage from "../HRM/DashBoardpage";
@@ -209,9 +209,9 @@ export default function PersistentDrawerLeft() {
                   {text === "Recruitment" ? (
                     <SavedSearchIcon />
                   ) : text === "Claim" ? (
-                    <AccountBalanceWalletIcon />
+                    <EditNoteIcon />
                   ) : text === "Newsfeed" ? (
-                    <ChatIcon />
+                    <ConnectWithoutContactIcon />
                   ) : null}
                 </ListItemIcon>
                 <ListItemText primary={text} />
