@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import NotFound from "./Components/NotFound";
 import Login from "./Pages/Login";
 import Portal from "./Pages/Portal";
-import Hrm from "./Pages/Hrm";
+import Hrms from "./Pages/Hrm";
 
 import "./App.css";
 
@@ -14,7 +14,7 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<NotFound />} />
         <Route path="/Portal" element={<Portal />} />
-        <Route path="/Hrm" element={<Hrm />} />
+        <Route path="/Hrms" element={<Hrms />} />
       </Routes>
     </Router>
   );

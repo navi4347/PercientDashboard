@@ -20,7 +20,14 @@ A web application dashboard built with Vite, React, Material-UI, and Bootstrap.
     npm install react-bootstrap bootstrap
     npm install react-router-dom
     npm install axios
+    npm install mysql2
+    npm install express
     npm install @fontsource/roboto
+    npm install bcrypt
+    npm install jsonwebtoken
+    npm install cors dotenv
+
+
     ```
 
 3. Start the development server:
@@ -77,5 +84,10 @@ Follow the project setup instructions to get the project up and running on your 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+
+## Code
+            VALUES ('admin', 'admin')  -->             VALUES ('admin', ?) for  hashing password
+ node: true in  .eslintrc.cjs: { browser: true, es2020: true , node: true},
+
 
 

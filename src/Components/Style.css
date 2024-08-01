@@ -5,6 +5,15 @@
   height: 100dvh;
 }
 
+
+@media (max-width: 600px) {
+  .Center {
+    height: 100%;
+    margin-top: 150px;
+  }
+}
+
+
 .loginform .kgf {
   width: 350px;
   max-width: 100%;
@@ -21,3 +30,5 @@
   color: red;
   text-align: center;
 }
+
+

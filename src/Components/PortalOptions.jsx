@@ -30,18 +30,17 @@ function PortalOptions() {
         justifyContent="center"
         gap={isMobile ? 2 : 6}
       >
-        <Card style={cardStyle} onClick={() => navigate("/Hrm")}>
+        <Card style={cardStyle} onClick={() => navigate("/Hrms")}>
           <CardContent>
             <Box
               display="flex"
               alignItems="center"
               justifyContent="center"
-              height="100%"
               flexDirection="column"
             >
               <People fontSize="large" sx={{ color: "#9f47d1" }} />
               <Typography variant="h6" sx={{ color: "#9f47d1" }}>
-                HRM
+                HRMS
               </Typography>
             </Box>
           </CardContent>

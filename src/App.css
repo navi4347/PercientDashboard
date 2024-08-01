@@ -45,6 +45,15 @@
   font-size: 1.2rem !important;
 }
 
+.css-1stswqg-MuiDrawer-docked .MuiDrawer-paper{
+  width: 240px !important;
+}
+@media (max-width: 600px) {
+  .css-1stswqg-MuiDrawer-docked .MuiDrawer-paper {
+    width:100% !important;
+  }
+}
+
 p {
   text-align: justify;
 }
